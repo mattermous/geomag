@@ -17,12 +17,13 @@
 
 import math, os, unittest
 from datetime import date
+from datetime import datetime
 
 class GeoMag:
 
     def GeoMag(self, dlat, dlon, h=0, time=date.today()): # latitude (decimal degrees), longitude (decimal degrees), altitude (feet), date
         #time = date('Y') + date('z')/365
-        time = time.year+((time - date(time.year,1,1)).days/365.0)
+        time = time.year+((time - datetime(time.year,1,1)).days/365.0)
         alt = h/3280.8399
 
         otime = oalt = olat = olon = -1000.0
